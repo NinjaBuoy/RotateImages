@@ -65,12 +65,22 @@ $(document).ready(function () {
 			},
 			stop: function( event, ui ) {
 			  $("#slider").slider('value',Math.round(ui.value));
-			  console.log(event);
+			  //console.log(event);
 				
 			//   event.mouseup(function(){
 			// 	endFrame =  Math.round(ui.value * 10);
 			//   });
-				endFrame = Math.round(ui.value * 10);
+				
+			endFrame = Math.trunc(ui.value * 10);
+				// rem = (ui.value*10) % 10;
+				// if(rem >4.9){
+				// 	endFrame = ((ui.value*10) - rem) + 10;
+				// }else{
+				// 	endFrame = ((ui.value*10) - rem);
+				// }
+
+				console.log(endFrame);
+				console.log(ui);
 				//   });
 			  sliderDrag = false;
 			}
